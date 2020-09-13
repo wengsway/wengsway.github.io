@@ -1,160 +1,187 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>泉水叮咚</title>
-<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico?v=1599987233184">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-117938981-1');
-  </script>
-    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="description" content="欢迎来到我的小站呀，很高兴遇见你！🤝" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
+  gtag('config', 'UA-117938981-1');
+</script>
 
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
-    </div>
-  </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://wengsway.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
-</div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
+    <meta name="description" content="欢迎来到泉水叮咚的博客❤" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wengsway.github.io">
+  <img class="avatar" src="https://wengsway.github.io/images/avatar.png?v=1599987233184" alt="">
+  </a>
+  <h1 class="site-title">
+    泉水叮咚
+  </h1>
+  <p class="site-description">
+    欢迎来到我的小站呀，很高兴遇见你！🤝
+  </p>
+  <div class="menu-container">
+    
       
-
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          分享 | Come easy, go easy: The Tech Takedown!
+        <a href="/" class="menu">
+          首页
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-04-08</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        近来，美国科技股屡受重创，这里引用《第一财经》4月3日的文章《美国科技股大溃败，FAANG市值一月蒸发4000亿》（作者：钱童心）中的内容：
-
-与今年1月高位相比，标普500指数已经下跌了超过10%。美股受挫最严重的是科技股，纳斯达克100...
-      </div>
-      <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/" class="btn">
-        Read more
-      </a>
-    </div>
+      
     
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/vSNms4IEif6XyHj.png" alt="分享 | Come easy, go easy: The Tech Takedown!">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          五粮液与老白干的配对交易策略研究
+      
+        <a href="/archives" class="menu">
+          归档
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-04-06</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        本文的研究对象是酒类行业的 11 只股票，整体思路是在 11 只股票中寻找协整性强的 2 只股票，然后构造配对交易策略并进行回测，检验该测策略的效果。
-Pairs Trading，即配对交易策略，其基本原理就是找出两只走势相关的股票。这两只...
-      </div>
-      <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" class="btn">
-        Read more
-      </a>
-    </div>
+      
     
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/YPpDc61JAUWGXlK.png" alt="五粮液与老白干的配对交易策略研究">
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
     
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/about/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+      
+        <a href="/post/about" class="menu">
           关于
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-04-01</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        
-
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-折腾过 Typecho、Wordpress、Hexo 后，倦了，把网站转移到 Github Page，感谢 Gridea ❤
-👨‍💻 博主是谁
-96年小生，年轻，上班族，金融...
-      </div>
-      <a href="https://wengsway.github.io/post/about/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-  </div>
-  
-      </div>
-
       
-  <div class="my-4 flex justify-between px-4 md:px-0">
     
-      <a href="https://wengsway.github.io/page/4/" class="btn btn-white">
-        <i class="ri-arrow-left-line mr-4"></i>
-        上一页
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/wengsway" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://weibo.com/wengsway " target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://www.facebook.com/quan.weng" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/">
+        <h2 class="post-title">分享 | Come easy, go easy: The Tech Takedown!</h2>
       </a>
-    
-    
-  </div>
+      <div class="post-info">
+        <span>
+          2018-04-08
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/vSNms4IEif6XyHj.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/">
+        <h2 class="post-title">五粮液与老白干的配对交易策略研究</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-04-06
+        </span>
+        <span>
+          9 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/YPpDc61JAUWGXlK.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/about/">
+        <h2 class="post-title">关于</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-04-01
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+</div>
 
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+    
+        <div class="pagination-container">
+  
+    <a href="https://wengsway.github.io/page/4/" class="prev-page">上一页</a>
+  
+  
+</div>
+
+    
+        <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-</footer>
+  <a class="rss" href="https://wengsway.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
 
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
-</body>
-
+  </body>
 </html>

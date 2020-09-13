@@ -1,462 +1,684 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>泉水叮咚</title>
-<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico?v=1599987233184">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-117938981-1');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117938981-1');
+</script>
+
+
+    <meta name="description" content="欢迎来到泉水叮咚的博客❤" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wengsway.github.io">
+  <img class="avatar" src="https://wengsway.github.io/images/avatar.png?v=1599987233184" alt="">
+  </a>
+  <h1 class="site-title">
+    泉水叮咚
+  </h1>
+  <p class="site-description">
+    欢迎来到我的小站呀，很高兴遇见你！🤝
+  </p>
+  <div class="menu-container">
     
-
-  <meta name="description" content="欢迎来到我的小站呀，很高兴遇见你！🤝" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
-
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
-    </div>
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+  <div class="social-container">
     
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
+      
+        <a href="https://github.com/wengsway" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
     
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
+      
     
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
+      
+        <a href="https://weibo.com/wengsway " target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
     
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
+      
     
-    <a href="https://wengsway.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
+      
+        <a href="https://www.facebook.com/quan.weng" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
 </div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+    
         
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/2019-nian-zhong-zong-jie/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                2019 年终总结
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Stata 处理面板数据的相关命令
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/shen-qi-de-qiu-zhao-zhi-lu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                神奇的秋招之旅
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/bei-jing-you-wan/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                北京游玩
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/wu-han-da-xue-xiao-yuan-feng-jing/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                武汉大学校园风景
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                华科经济学院数据库使用说明
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Python 编程：从入门到实践
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/python-course-homework4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Python Course homework4
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Financial Statistics and Econometrics：Homework 3 by Python
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/python-class-homework-2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Python Class homework 2
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/python-class-homework-1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Python Class homework 1
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/wu-han-shi-feng-jing/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                武汉市风景
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 28 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 26 至 27 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 22 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 17 至 20 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Financial Statistics and Econometrics：Homework 2
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 15 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 14 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 12 至 13 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 10 至 11 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 8 至 9 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 7 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                三个Python编程小练习
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                CPA 会计分录 第 3 至 6 章
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Financial Statistics and Econometrics：Homework 1
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                Stata 14 和 Stata 15.1 下载
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/hua-ke-xiao-yuan-feng-jing/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                华科校园风景
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/hua-ke-sheng-huo-gan-xiang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                华科生活感想
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                第3章 存货学习笔记
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                第2章 会计政策、会计估计及其变更和差错更正
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                第1章 总论学习笔记
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                下载 Coursera 课程的好方法
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                资管新规落地
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                中国著名微观数据库
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                廿年磨一剑，李小加为香港召唤独角兽
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/ting-shuo-sheng-ri-he-jiao-qing-hen-pei-e/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                听说生日和矫情很配哦
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/tan-tan-dr-yu-cdr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                谈谈 DR 与 CDR
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/jian-dan-shi-zhi-lun-dong-ce-lue-lian-xi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                简单市值轮动策略练习
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/a-li-bing-mei-you-hua-95-yi-mei-yuan-shou-gou-e-liao-me/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                阿里并没有花95亿美元收购饿了么
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                分享 | Come easy, go easy: The Tech Takedown!
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                五粮液与老白干的配对交易策略研究
-              </a>
-            </div>
-          </div>
-        
-          <div class="px-8 pb-5 flex relative overflow-hidden">
-            
-            <div class="flex-1">
-              <a href="https://wengsway.github.io/post/about/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-                关于
-              </a>
-            </div>
-          </div>
-        
-      </div>
 
+<div class="archives-container">
+  
+    <h2 class="year">2020</h2>
+    
       
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+        <a href="https://wengsway.github.io/post/2019-nian-zhong-zong-jie/" class="post">
+          <h2 class="post-title">
+            2019 年终总结
+          </h2>
+          <div class="time">2020-03-26</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" class="post">
+          <h2 class="post-title">
+            Stata 处理面板数据的相关命令
+          </h2>
+          <div class="time">2020-02-07</div>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    <h2 class="year">2019</h2>
+    
+      
+    
+      
+    
+      
+        <a href="https://wengsway.github.io/post/shen-qi-de-qiu-zhao-zhi-lu/" class="post">
+          <h2 class="post-title">
+            神奇的秋招之旅
+          </h2>
+          <div class="time">2019-12-08</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/bei-jing-you-wan/" class="post">
+          <h2 class="post-title">
+            北京游玩
+          </h2>
+          <div class="time">2019-05-04</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/wu-han-da-xue-xiao-yuan-feng-jing/" class="post">
+          <h2 class="post-title">
+            武汉大学校园风景
+          </h2>
+          <div class="time">2019-03-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/" class="post">
+          <h2 class="post-title">
+            华科经济学院数据库使用说明
+          </h2>
+          <div class="time">2019-03-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/" class="post">
+          <h2 class="post-title">
+            Python 编程：从入门到实践
+          </h2>
+          <div class="time">2019-02-07</div>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    <h2 class="year">2018</h2>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://wengsway.github.io/post/python-course-homework4/" class="post">
+          <h2 class="post-title">
+            Python Course homework4
+          </h2>
+          <div class="time">2018-12-10</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/" class="post">
+          <h2 class="post-title">
+            Financial Statistics and Econometrics：Homework 3 by Python
+          </h2>
+          <div class="time">2018-11-10</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/python-class-homework-2/" class="post">
+          <h2 class="post-title">
+            Python Class homework 2
+          </h2>
+          <div class="time">2018-10-31</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/python-class-homework-1/" class="post">
+          <h2 class="post-title">
+            Python Class homework 1
+          </h2>
+          <div class="time">2018-10-31</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/wu-han-shi-feng-jing/" class="post">
+          <h2 class="post-title">
+            武汉市风景
+          </h2>
+          <div class="time">2018-10-29</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 28 章
+          </h2>
+          <div class="time">2018-10-23</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 26 至 27 章
+          </h2>
+          <div class="time">2018-10-22</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 22 章
+          </h2>
+          <div class="time">2018-10-20</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 17 至 20 章
+          </h2>
+          <div class="time">2018-10-19</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/" class="post">
+          <h2 class="post-title">
+            Financial Statistics and Econometrics：Homework 2
+          </h2>
+          <div class="time">2018-10-18</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 15 章
+          </h2>
+          <div class="time">2018-10-17</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 14 章
+          </h2>
+          <div class="time">2018-10-17</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 12 至 13 章
+          </h2>
+          <div class="time">2018-10-16</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 10 至 11 章
+          </h2>
+          <div class="time">2018-10-15</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 8 至 9 章
+          </h2>
+          <div class="time">2018-10-14</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 7 章
+          </h2>
+          <div class="time">2018-10-13</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/" class="post">
+          <h2 class="post-title">
+            三个Python编程小练习
+          </h2>
+          <div class="time">2018-10-12</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/" class="post">
+          <h2 class="post-title">
+            CPA 会计分录 第 3 至 6 章
+          </h2>
+          <div class="time">2018-10-12</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/" class="post">
+          <h2 class="post-title">
+            Financial Statistics and Econometrics：Homework 1
+          </h2>
+          <div class="time">2018-09-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/" class="post">
+          <h2 class="post-title">
+            Stata 14 和 Stata 15.1 下载
+          </h2>
+          <div class="time">2018-09-17</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/hua-ke-xiao-yuan-feng-jing/" class="post">
+          <h2 class="post-title">
+            华科校园风景
+          </h2>
+          <div class="time">2018-09-08</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/hua-ke-sheng-huo-gan-xiang/" class="post">
+          <h2 class="post-title">
+            华科生活感想
+          </h2>
+          <div class="time">2018-09-06</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/" class="post">
+          <h2 class="post-title">
+            第3章 存货学习笔记
+          </h2>
+          <div class="time">2018-07-03</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/" class="post">
+          <h2 class="post-title">
+            第2章 会计政策、会计估计及其变更和差错更正
+          </h2>
+          <div class="time">2018-06-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/" class="post">
+          <h2 class="post-title">
+            第1章 总论学习笔记
+          </h2>
+          <div class="time">2018-06-29</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/" class="post">
+          <h2 class="post-title">
+            下载 Coursera 课程的好方法
+          </h2>
+          <div class="time">2018-05-17</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/" class="post">
+          <h2 class="post-title">
+            资管新规落地
+          </h2>
+          <div class="time">2018-05-10</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/" class="post">
+          <h2 class="post-title">
+            中国著名微观数据库
+          </h2>
+          <div class="time">2018-04-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/" class="post">
+          <h2 class="post-title">
+            廿年磨一剑，李小加为香港召唤独角兽
+          </h2>
+          <div class="time">2018-04-30</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/ting-shuo-sheng-ri-he-jiao-qing-hen-pei-e/" class="post">
+          <h2 class="post-title">
+            听说生日和矫情很配哦
+          </h2>
+          <div class="time">2018-04-27</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/tan-tan-dr-yu-cdr/" class="post">
+          <h2 class="post-title">
+            谈谈 DR 与 CDR
+          </h2>
+          <div class="time">2018-04-21</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/jian-dan-shi-zhi-lun-dong-ce-lue-lian-xi/" class="post">
+          <h2 class="post-title">
+            简单市值轮动策略练习
+          </h2>
+          <div class="time">2018-04-21</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/a-li-bing-mei-you-hua-95-yi-mei-yuan-shou-gou-e-liao-me/" class="post">
+          <h2 class="post-title">
+            阿里并没有花95亿美元收购饿了么
+          </h2>
+          <div class="time">2018-04-14</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/fen-xiang-come-easy-go-easy-the-tech-takedown/" class="post">
+          <h2 class="post-title">
+            分享 | Come easy, go easy: The Tech Takedown!
+          </h2>
+          <div class="time">2018-04-08</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" class="post">
+          <h2 class="post-title">
+            五粮液与老白干的配对交易策略研究
+          </h2>
+          <div class="time">2018-04-06</div>
+        </a>
+      
+    
+      
+        <a href="https://wengsway.github.io/post/about/" class="post">
+          <h2 class="post-title">
+            关于
+          </h2>
+          <div class="time">2018-04-01</div>
+        </a>
+      
+    
+  
+</div>
+
+    
+        <div class="pagination-container">
+  
+  
+</div>
+
+    
+        <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-</footer>
+  <a class="rss" href="https://wengsway.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
-</body>
+  </body>
 </html>

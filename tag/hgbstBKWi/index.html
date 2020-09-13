@@ -1,381 +1,378 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>泉水叮咚</title>
-<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<html>
+  <head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Finance | 泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico?v=1599987233184">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Finance | 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-117938981-1');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117938981-1');
+</script>
+
+
+  <meta name="description" content="欢迎来到泉水叮咚的博客❤" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wengsway.github.io">
+  <img class="avatar" src="https://wengsway.github.io/images/avatar.png?v=1599987233184" alt="">
+  </a>
+  <h1 class="site-title">
+    泉水叮咚
+  </h1>
+  <p class="site-description">
+    欢迎来到我的小站呀，很高兴遇见你！🤝
+  </p>
+  <div class="menu-container">
     
-
-  <meta name="description" content="欢迎来到我的小站呀，很高兴遇见你！🤝" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
-
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
-    </div>
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+  <div class="social-container">
     
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
+      
+        <a href="https://github.com/wengsway" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
     
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
+      
     
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
+      
+        <a href="https://weibo.com/wengsway " target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
     
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
+      
     
-    <a href="https://wengsway.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
+      
+        <a href="https://www.facebook.com/quan.weng" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
 </div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
-        <i class="ri-hashtag"></i>
-        Finance
-      </h1>
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          Financial Statistics and Econometrics：Homework 3 by Python
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-11-10</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        1.第1问和第2问
-Program
-# -*- coding: utf-8 -*-
-&quot;&quot;&quot;
-Created on Tue Nov  6 12:08:07 2018
-
-@author: Wengsway
-
-&qu...
-      </div>
-      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/z98gHsvi7tKkqbo.jpg" alt="Financial Statistics and Econometrics：Homework 3 by Python">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 28 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-23</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第28章每股收益的会计分录
-相关文章：CPA 会计分录 第 26 至 27 章
-Chapter 28 每股收益
-
-基本每股收益
-
-基本每股收益 = 归属于普通股股东的当期净利润 ÷ 当期实际发行在外普通股的加权平均数
-当期实...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/HVYwbOjC7RSlEie.jpg" alt="CPA 会计分录 第 28 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 26 至 27 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-22</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第26至27章企业合并以及企业合并报表的会计分录
-相关文章：CPA 会计分录 第 22 章
-Chapter 26 企业合并
-
-同一控制下企业合并的处理
-
-长期股权投资的确认和计量
-
-借：长期股权投资（合并日享有被合并方相对于...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/kXUaPBWvMNSTd2L.jpg" alt="CPA 会计分录 第 26 至 27 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 22 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-20</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第22章租赁的会计分录
-相关文章：CPA 会计分录 第 17 至 20 章
-Chapter 22 租赁
-
-担保余值
-
-承租人担保余值 = 承租人担保的金额 + 与承租人有关的第三方担保的金额
-出租人担保余值 = 承租人担保余...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/Wvc2uf983lI4EOg.jpg" alt="CPA 会计分录 第 22 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 17 至 20 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-19</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第17至20章政府补助、债务重组和所得税的会计分录
-相关文章：CPA 会计分录 第 15 章
-Chapter 17 政府补助
-
-与资产相关的政府补助
-
-总额法
-
-取得时
-
-借：银行存款（或XX资产）
-贷：递延收益
-
-
-摊销时...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/NWuA4q9TIPKSral.jpg" alt="CPA 会计分录 第 17 至 20 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          Financial Statistics and Econometrics：Homework 2
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-18</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        Homework 2
-第一部分
-
-现有一组样本 Y1,Y2,⋯ ,Yn;X1,X2,⋯ ,Xn.Y_1,Y_2,\cdots,Y_n;X_1,X_2,\cdots,X_n.Y1​,Y2​,⋯,Yn​;X1​,X2​,⋯,Xn​. 如果采用线...
-      </div>
-      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/rql5J3VjUF2wMxa.png" alt="Financial Statistics and Econometrics：Homework 2">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 15 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-17</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第15章所有者权益的会计分录
-相关文章：CPA 会计分录 第 14 章
-Chapter 15 所有者权益
-
-实收资本增加的会计处理
-
-企业增加实收资本的一般途径
-
-将资本公积转增实收资本或股本
-
-借：资本公积——资本溢价（或...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/d9cYKOL23HlsNPQ.jpg" alt="CPA 会计分录 第 15 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 14 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-17</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第14章金融工具的会计分录
-相关文章：CPA 会计分录 第 12 至 13 章
-Chapter 14 金融工具
-
-以摊余成本计量的金融资产的重分类
-
-以摊余成本计量的金融资产→以公允价值计量且其变动计入当期损益的金融资产
-
-...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/ZQbYUhrnyHI4f2k.jpg" alt="CPA 会计分录 第 14 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 12 至 13 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-16</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第12至13章股份支付和或有事项的会计分录
-相关文章：CPA 会计分录 第 10 至 11 章
-Chapter 12 股份支付
-
-
-等待期内每个资产负债表日
-
-权益结算的股份支付
-
-借：管理费用等
-贷：资本公积——其他资本公...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/9XGcHZwohJ4dk1K.jpg" alt="CPA 会计分录 第 12 至 13 章">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          CPA 会计分录 第 10 至 11 章
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-10-15</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        整理的 CPA 第10至11章职工薪酬和借款费用的会计分录
-相关文章：CPA 会计分录 第 8 至 9 章
-Chapter 10 职工薪酬
-
-货币性短期薪酬
-
-借：生产成本（生产工人） 制造费用（车间管理人员） 管理费用（行政管理人员） 销...
-      </div>
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/3HAPnCXQThLO6el.jpg" alt="CPA 会计分录 第 10 至 11 章">
-    
-  </div>
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# Finance
+            </h2> 
+        </div>
+        <div class="post-container">
   
-      </div>
-
-      
-  <div class="my-4 flex justify-between px-4 md:px-0">
-    
-    
-      <a href="https://wengsway.github.io/tag/hgbstBKWi/page/2" class="btn btn-white">
-        下一页
-        <i class="ri-arrow-right-line ml-4"></i>
+    <article class="post">
+      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/">
+        <h2 class="post-title">Financial Statistics and Econometrics：Homework 3 by Python</h2>
       </a>
-    
-  </div>
+      <div class="post-info">
+        <span>
+          2018-11-10
+        </span>
+        <span>
+          25 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-3-by-python/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/z98gHsvi7tKkqbo.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 28 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-23
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-28-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/HVYwbOjC7RSlEie.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 26 至 27 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-22
+        </span>
+        <span>
+          15 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-26-zhi-27-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/kXUaPBWvMNSTd2L.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 22 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-20
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-22-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/Wvc2uf983lI4EOg.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 17 至 20 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-19
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-17-zhi-20-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/NWuA4q9TIPKSral.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/">
+        <h2 class="post-title">Financial Statistics and Econometrics：Homework 2</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-18
+        </span>
+        <span>
+          25 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-2/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/rql5J3VjUF2wMxa.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 15 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-17
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-15-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/d9cYKOL23HlsNPQ.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 14 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-17
+        </span>
+        <span>
+          6 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-14-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/ZQbYUhrnyHI4f2k.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 12 至 13 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-16
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-12-zhi-13-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/9XGcHZwohJ4dk1K.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/">
+        <h2 class="post-title">CPA 会计分录 第 10 至 11 章</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-10-15
+        </span>
+        <span>
+          4 min read
+        </span>
+        
+          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
+            # Finance
+          </a>
+        
+      </div>
+      
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-10-zhi-11-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/3HAPnCXQThLO6el.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+</div>
 
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+        <div class="pagination-container">
+  
+  
+    <a href="https://wengsway.github.io/tag/hgbstBKWi/page/2" class="next-page">下一页</a>
+  
+</div>
+
+        <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-</footer>
+  <a class="rss" href="https://wengsway.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
 
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
-</body>
+  </body>
 </html>
