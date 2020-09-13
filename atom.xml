@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wengsway.github.io</id>
     <title>泉水叮咚</title>
-    <updated>2020-09-13T07:16:03.855Z</updated>
+    <updated>2020-09-13T07:38:36.674Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wengsway.github.io"/>
     <link rel="self" href="https://wengsway.github.io/atom.xml"/>
@@ -11,16 +11,77 @@
     <icon>https://wengsway.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 泉水叮咚</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://wengsway.github.io/post/hello-gridea/</id>
-        <link href="https://wengsway.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[三个Python编程小练习]]></title>
+        <id>https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/</id>
+        <link href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2018-10-12T07:37:12.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CPA 会计分录 第 3 至 6 章]]></title>
+        <id>https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/</id>
+        <link href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/">
+        </link>
+        <updated>2018-10-12T07:36:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Financial Statistics and Econometrics：Homework 1]]></title>
+        <id>https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/</id>
+        <link href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/">
+        </link>
+        <updated>2018-09-30T07:34:37.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stata 14 和 Stata 15.1 下载]]></title>
+        <id>https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/</id>
+        <link href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/">
+        </link>
+        <updated>2018-09-17T07:33:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[华科校园风景]]></title>
+        <id>https://wengsway.github.io/post/hua-ke-xiao-yuan-feng-jing/</id>
+        <link href="https://wengsway.github.io/post/hua-ke-xiao-yuan-feng-jing/">
+        </link>
+        <updated>2018-09-08T07:32:12.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[华科生活感想]]></title>
+        <id>https://wengsway.github.io/post/hua-ke-sheng-huo-gan-xiang/</id>
+        <link href="https://wengsway.github.io/post/hua-ke-sheng-huo-gan-xiang/">
+        </link>
+        <updated>2018-09-06T07:31:14.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[第3章 存货学习笔记]]></title>
+        <id>https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/</id>
+        <link href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/">
+        </link>
+        <updated>2018-07-03T07:29:52.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[第2章 会计政策、会计估计及其变更和差错更正]]></title>
+        <id>https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/</id>
+        <link href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/">
+        </link>
+        <updated>2018-06-30T07:28:46.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[第1章 总论学习笔记]]></title>
+        <id>https://wengsway.github.io/post/di-1-zhang-zong-lun/</id>
+        <link href="https://wengsway.github.io/post/di-1-zhang-zong-lun/">
+        </link>
+        <updated>2018-06-29T07:27:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[下载 Coursera 课程的好方法]]></title>
+        <id>https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/</id>
+        <link href="https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/">
+        </link>
+        <updated>2018-05-17T07:26:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近在学习 <a href="https://www.coursera.org/">Coursera</a> 上的一些课程，今天感到用校园网在线看实在是太慢了，视频经常刷不出来啊！！！</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<p>最近在学习 <a href="https://www.coursera.org/">Coursera</a> 上的一些课程，今天感到用校园网在线看实在是太慢了，视频经常刷不出来啊！！！</p>
 ]]></content>
     </entry>
 </feed>

@@ -1,0 +1,556 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>五粮液与老白干的配对交易策略研究 - 泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="五粮液与老白干的配对交易策略研究 - 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-117938981-1');
+  </script>
+    
+
+  <meta name="description" content="本文的研究对象是酒类行业的 11 只股票，整体思路是在 11 只股票中寻找协整性强的 2 只股票，然后构造配对交易策略并进行回测，检验该测策略的效果。
+Pairs Trading，即配对交易策略，其基本原理就是找出两只走势相关的股票。这两只..." />
+  <meta property="og:title" content="五粮液与老白干的配对交易策略研究 - 泉水叮咚">
+  <meta property="og:description" content="本文的研究对象是酒类行业的 11 只股票，整体思路是在 11 只股票中寻找协整性强的 2 只股票，然后构造配对交易策略并进行回测，检验该测策略的效果。
+Pairs Trading，即配对交易策略，其基本原理就是找出两只走势相关的股票。这两只..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/" />
+  <meta property="og:image" content="https://i.loli.net/2020/09/13/YPpDc61JAUWGXlK.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="五粮液与老白干的配对交易策略研究 - 泉水叮咚">
+  <meta name="twitter:description" content="本文的研究对象是酒类行业的 11 只股票，整体思路是在 11 只股票中寻找协整性强的 2 只股票，然后构造配对交易策略并进行回测，检验该测策略的效果。
+Pairs Trading，即配对交易策略，其基本原理就是找出两只走势相关的股票。这两只...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://wengsway.github.io/post/wu-liang-ye-yu-lao-bai-gan-de-pei-dui-jiao-yi-ce-lue-yan-jiu/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://wengsway.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://wengsway.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      泉水叮咚
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          五粮液与老白干的配对交易策略研究
+        </h1>
+        
+          <img src="https://i.loli.net/2020/09/13/YPpDc61JAUWGXlK.png" alt="五粮液与老白干的配对交易策略研究" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-04-06 · 9 min read</div>
+          
+            <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Finance
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <p>本文的研究对象是酒类行业的 <em>11</em> 只股票，整体思路是在 <em>11</em> 只股票中寻找协整性强的 <em>2</em> 只股票，然后构造配对交易策略并进行回测，检验该测策略的效果。</p>
+<p><em>Pairs Trading</em>，即配对交易策略，其基本原理就是找出两只走势相关的股票。这两只股票的价格差距从长期来看在一个固定的水平内波动，如果价差暂时性的超过或低于这个水平，就买多价格偏低的股票，卖空价格偏高的股票。等到价差恢复正常水平时，进行平仓操作，赚取这一过程中价差变化所产生的利润。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="选取的股票">选取的股票</h2>
+<p>本文的选取的11只股票如下所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">公司名称</th>
+<th style="text-align:center">股票代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">贵州茅台</td>
+<td style="text-align:center">600519.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">山西汾酒</td>
+<td style="text-align:center">600809.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">洋河股份</td>
+<td style="text-align:center">002304.SZ</td>
+</tr>
+<tr>
+<td style="text-align:center">今世缘</td>
+<td style="text-align:center">603369.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">舍得酒业</td>
+<td style="text-align:center">600702.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">水井坊</td>
+<td style="text-align:center">600799.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">五粮液</td>
+<td style="text-align:center">000858.SZ</td>
+</tr>
+<tr>
+<td style="text-align:center">皇台酒业</td>
+<td style="text-align:center">000995.SZ</td>
+</tr>
+<tr>
+<td style="text-align:center">酒鬼屋</td>
+<td style="text-align:center">000799.SZ</td>
+</tr>
+<tr>
+<td style="text-align:center">老白干酒</td>
+<td style="text-align:center">600559.SH</td>
+</tr>
+<tr>
+<td style="text-align:center">伊力特</td>
+<td style="text-align:center">600197.SH</td>
+</tr>
+</tbody>
+</table>
+<h2 id="协整性检验">协整性检验</h2>
+<p>首先，我们构造一个读取股票价格并判断协整关系的函数。该函数返回的两个值分别为协整性检验的 <em>p</em> 值矩阵以及所有传入的参数中协整性较强的股票对。 <em>p</em> 值越低，协整关系就越强；<em>p</em> 值低于 0.05 时，协整关系非常强。</p>
+<p>利用如下代码进行协整关系的检验，并用热力图来直观呈现结果。</p>
+<p>说明：颜色越红的表示 <em>p</em> 值越小，则协整关系就越强。</p>
+<pre><code class="language-python">import jqdata
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def find_cointegrated_pairs(dataframe):
+    n = dataframe.shape[1]
+    pvalue_matrix = np.ones((n, n))
+    keys = dataframe.keys()
+    pairs = []
+    for i in range(n):
+        for j in range(n):
+            stock1 = dataframe[keys[i]]
+            stock2 = dataframe[keys[j]]
+            result = sm.tsa.stattools.coint(stock1, stock2)
+            pvalue = result[1]
+            pvalue_matrix[i, j] = pvalue
+            if pvalue &lt; 0.05:
+                pairs.append((keys[i], keys[j], pvalue))
+    return pvalue_matrix, pairs
+stock_list = [&quot;600519.XSHG&quot;, &quot;600809.XSHG&quot;, &quot;002304.XSHE&quot;, &quot;603369.XSHG&quot;, &quot;600702.XSHG&quot;,
+              &quot;600779.XSHG&quot;,&quot;000858.XSHE&quot;, &quot;000995.XSHE&quot;, &quot;000799.XSHE&quot;, &quot;600559.XSHG&quot;,
+              &quot;600197.XSHG&quot;]
+prices_df = get_price(stock_list,start_date=&quot;2016-01-01&quot;,end_date=&quot;2017-01-01&quot;,fields=&quot;close&quot;)['close']
+pvalues, pairs = find_cointegrated_pairs(prices_df)
+sns.heatmap(1-pvalues, xticklabels=stock_list, yticklabels=stock_list, cmap='RdYlGn_r', mask = (pvalues == 1),annot=True)
+print (pairs)
+</code></pre>
+<p>结果如下图所示：</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/09/13/RNHb4krDmCZYxUJ.png" alt="" loading="lazy"></figure>
+<p>从图中可以看出，11只酒类股票中有10对（涵盖*（a,b）<em>与</em>（b,a）*）具有显著的协整性关系，10对股票分别是：600809—600779；002304—000799；600702—000858；600779—000858；000858—600559；002304—603369；600809—600779；600519—600197；600779—600559；000858—600559。</p>
+<p>注1：按*（x,y）*顺序排列</p>
+<p>注2：<em>coint(a,b)</em> 不等于 <em>coint(b,a)</em>。</p>
+<p>这里选取“000858—600559”即“五粮液—老白干酒”这一对股票进行研究。</p>
+<h2 id="价格走势">价格走势</h2>
+<p>利用如下代码呈现五粮液和老白干酒这两只股票的价格走势。</p>
+<pre><code class="language-python">stock_df1 = prices_df[&quot;000858.XSHE&quot;]
+stock_df2 = prices_df[&quot;600559.XSHG&quot;]
+plt.plot(stock_df1); plt.plot(stock_df2)
+plt.xlabel(&quot;Time&quot;); plt.ylabel(&quot;Price&quot;)
+plt.legend([&quot;000858.XSHE&quot;, &quot;600559.XSHG&quot;],loc='best')
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/09/13/wk14fOY9Baz8mNJ.png" alt="" loading="lazy"></figure>
+<h2 id="ols回归">OLS回归</h2>
+<p>然后，对两只股票的价格进行<em>OLS</em>线性回归。</p>
+<pre><code class="language-python">x=stock_df1
+y=stock_df2 
+X=sm.add_constant(x)
+result=(sm.OLS(y,X)).fit()
+print(result.summary())
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/09/13/6cxQtgVbJsAX8qi.png" alt="" loading="lazy"></figure>
+<p>由上图可知，系数是0.5586，下面呈现的是数据和拟合线。</p>
+<pre><code class="language-python">fig, ax = plt.subplots(figsize=(8,6))
+ax.plot(x, y, 'o', label=&quot;price&quot;)
+ax.plot(x, result.fittedvalues, 'b', label=&quot;OLS&quot;)
+ax.legend(loc='upper left')
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2020/09/13/J5SDyPuoMOeiZ6K.png" alt="" loading="lazy"></figure>
+<p>所以，假设老白干酒的股价为 <em>y</em>，五粮液的股价为 <em>x</em>，拟合结果：</p>
+<p><em>y=5.2179+0.5586</em>x*</p>
+<p>因此，<em>y-0.5586x</em> 是平稳序列。</p>
+<h2 id="价差序列">价差序列</h2>
+<p>于是，可按照上述比例，做出五粮液和老白干酒的股价价差的平稳序列。</p>
+<pre><code class="language-python">plot(stock_df2-0.5586*stock_df1);
+plt.axhline((stock_df2-0.5586*stock_df1).mean(), color=&quot;red&quot;, linestyle=&quot;--&quot;)
+plt.xlabel(&quot;Time&quot;); plt.ylabel(&quot;Stationary Series&quot;)
+plt.legend([&quot;Stationary Series&quot;, &quot;Mean&quot;])
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2020/09/13/rBpKdzIWMPRjl98.png" alt="" loading="lazy"></figure>
+<p>图中的红线就是两者股价价差的均值，可见虽然价差上下波动，但整体上都会回归到均值附近。</p>
+<h2 id="何时买与卖">何时买与卖</h2>
+<p><em>z-score</em> 是对时间序列偏离其均值程度的衡量，表示时间序列偏离了其均值多少倍的标准差。一个序列在时间 <em>t</em> 的 <em>z-score</em>，是它在时间 <em>t</em> 的值，减去序列的均值，再除以序列的标准差后得到的值。代码如下：</p>
+<pre><code class="language-python">def zscore(series):
+    return (series - series.mean()) / np.std(series)
+plot(zscore(stock_df2-0.5586*stock_df1))
+plt.axhline(zscore(stock_df2-0.5586*stock_df1).mean(), color=&quot;green&quot;)
+plt.axhline(1.0, color=&quot;red&quot;, linestyle=&quot;--&quot;)
+plt.axhline(-1.0, color=&quot;yellow&quot;, linestyle=&quot;--&quot;)
+plt.legend([&quot;z-score&quot;, &quot;mean&quot;, &quot;+1&quot;, &quot;-1&quot;],loc='upper right')
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2020/09/13/qSIbapAk3ynGvgz.png" alt="" loading="lazy"></figure>
+<p>当两个序列的 <em>z-score</em> 突破 <em>1</em> 或者 <em>-1</em> 时，说明两支股票的价差脱离了统计概念中的合理区间，如果它们的协整关系能够保持，那么它们的价差应该收敛。</p>
+<p>因此，当 <em>z-score</em> 突破红线时，说明五粮液的股价相对于老白干酒被高估，所以买入 <em>1</em> 份老白干酒并卖空 <em>0.5586</em> 份五粮液的股票，当 <em>z-score</em> 回归于 <em>0</em> 时（图中绿线）时清仓可获利。如果 <em>z-score</em> 突破下方黄线时，说明五粮液的股价相对于老白干酒被低估，所以买入 <em>1</em> 份五粮液的股票并卖空 <em>1.8</em> 份老白干酒的股票。</p>
+<h2 id="在a股如何实现">在A股如何实现</h2>
+<p>由于A股市场是不允许直接卖空操作的，而融资融券又具有杠杆。因此退而求其次，至进行做多操作。</p>
+<p>首先，初始状态资金配置为 <em>50%</em> 的五粮液与 <em>50%</em> 的老白干酒。设置 <em>z-score</em> 的检测周期为 <em>120</em> 天（约半年的交易日）。</p>
+<p>整体思路：每一天检测下 <em>z-score</em>，如果  <em>z-score &gt;1</em>，则调整为全仓老白干酒；如果 <em>z-score &lt; -1</em>，则全仓调整为五粮液；如果由 <em>z-score</em> 从两端调整至 <em>0</em> 点，则调整为初始配置比例。</p>
+<pre><code class="language-python">import numpy
+import pandas as pd
+
+def initialize(context):
+    set_params()
+    set_variables()
+    set_backtest()
+    set_option('ues_real_price',True)
+def set_params():
+    g.security1=&quot;000858.XSHE&quot;
+    g.security2=&quot;600559.XSHG&quot;
+    g.benchmark=&quot;000858.XSHE&quot;
+    g.regression_ratio=0.5586
+    g.p=0.5
+    g.q=0.5
+    g.test_days=120
+def set_variables():
+    g.state=&quot;empty&quot;
+def set_backtest():
+    set_benchmark(g.benchmark)
+    log.set_level(&quot;order&quot;,&quot;error&quot;)
+    set_option(&quot;use_real_price&quot;, True)
+    set_slippage(FixedSlippage(0.))
+def handle_data(context, data):
+    new_state=get_signal()
+    change_positions(new_state,context)
+def z_test():
+    prices1=np.array(attribute_history(g.security1, g.test_days, '1d', ['close']).close)
+    prices2=np.array(attribute_history(g.security2, g.test_days, '1d', ['close']).close)
+    stable_series=prices2-g.regression_ratio*prices1
+    series_mean=mean(stable_series)
+    sigma=np.std(stable_series)
+    diff=stable_series[-1]-series_mean
+    return(diff/sigma)
+def get_signal():
+    z_score=z_test
+    if z_score &gt; 1:
+        return('allbuy2')
+    if z_score &lt; -1:
+        reutrn('allbuy1')
+    if -1 &lt;= z_score &lt;= 1:
+        if z_score &gt;= 0:
+            return('side1')
+        else:
+            return('side2')
+def change_positions(new_state,context):
+    total_value=context.portfolio.portfolio_value
+    if new_state == 'allbuy1':
+        order_target(g.security2,0)
+        order_value(g.security1,total_value)
+        g.state='allbuy1'
+    if new_state == 'allbuy2':
+        order_target(g.security1,0)
+        order_value(g.security2,total_value)
+        g.state='allbuy2'
+    if (g.state == 'allbuy1' and new_state == 'side2') or (g.state == 'allbuy2' and new_state == 'side1'):
+        order_target_value(g.security1, g.p*total_value)
+        order_target_value(g.security2, g.q*total_value)
+        order_target_value(g.security1, g.p*total_value)
+        order_target_value(g.security2, g.q*total_value)
+        g.state = 'even'
+</code></pre>
+<p>在 <em>JoinQuant</em> 上运行回测后，结果如下：</p>
+<p>以五粮液（000858.XSHE）为基准：</p>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2020/09/13/n1Gces3FgaYMAIk.png" alt="" loading="lazy"></figure>
+<p>以老白干酒（600559.XSHG）为基准：</p>
+<p><img src="https://i.loli.net/2020/09/13/n716gizr4O9sJGj.png" alt="" loading="lazy"><br>
+可见，该策略比单独购买老白干酒的股票的收益率要来得高，但是不如略低于只购买五粮液的股票的收益率，因此本策略还有很大的改进空间。</p>
+<h2 id="结语">结语</h2>
+<p>由于本人初次学习量化策略，本文作为我学习的一个记录，有诸多不足之处望各位海涵。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://www.joinquant.net/post/1810?tag=algorithm">【量化课堂】基于协整的搬砖策略</a></li>
+<li><a href="https://www.joinquant.com/post/1731">【量化课堂】协整的直观认识</a></li>
+<li><a href="https://www.joinquant.com/post/11593?tag=algorithm">我好像破解了聚宽擂台排第一的策略？！</a></li>
+</ol>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>摘自：【量化课堂】基于协整的搬砖策略 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+        
+
+        
+          <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script type="application/javascript" src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script type="application/javascript">
+
+var options = {
+  shortname: 'wengsway',
+  apikey: 'OH3ecd0RzHxNVCLmLoqmcHRDb9Gy40HK10DGjWFAWr6A4i2hx25TsT9O7o5rhOdf',
+}
+if ('https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/') {
+  options.api = 'https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+        
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%80%89%E5%8F%96%E7%9A%84%E8%82%A1%E7%A5%A8">选取的股票</a></li>
+<li><a href="#%E5%8D%8F%E6%95%B4%E6%80%A7%E6%A3%80%E9%AA%8C">协整性检验</a></li>
+<li><a href="#%E4%BB%B7%E6%A0%BC%E8%B5%B0%E5%8A%BF">价格走势</a></li>
+<li><a href="#ols%E5%9B%9E%E5%BD%92">OLS回归</a></li>
+<li><a href="#%E4%BB%B7%E5%B7%AE%E5%BA%8F%E5%88%97">价差序列</a></li>
+<li><a href="#%E4%BD%95%E6%97%B6%E4%B9%B0%E4%B8%8E%E5%8D%96">何时买与卖</a></li>
+<li><a href="#%E5%9C%A8a%E8%82%A1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0">在A股如何实现</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://wengsway.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+    
+  
+</body>
+
+</html>

@@ -1,0 +1,574 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>简单市值轮动策略练习 - 泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="简单市值轮动策略练习 - 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-117938981-1');
+  </script>
+    
+
+  <meta name="description" content="昨天学习了 JoinQuant 上 【新手入门教程】简单市值轮动策略 ，今天练习一下。
+
+小市值策略
+A股市场常常推崇小市值公司，因此小市值策略在A股市场会获得不错的收益，常见的持证逻辑有：
+
+
+小市值的上市公司中有很多成长性公司，股价上升..." />
+  <meta property="og:title" content="简单市值轮动策略练习 - 泉水叮咚">
+  <meta property="og:description" content="昨天学习了 JoinQuant 上 【新手入门教程】简单市值轮动策略 ，今天练习一下。
+
+小市值策略
+A股市场常常推崇小市值公司，因此小市值策略在A股市场会获得不错的收益，常见的持证逻辑有：
+
+
+小市值的上市公司中有很多成长性公司，股价上升..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://wengsway.github.io/post/jian-dan-shi-zhi-lun-dong-ce-lue-lian-xi/" />
+  <meta property="og:image" content="https://i.loli.net/2020/09/13/srjTtIudOy2KoZp.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="简单市值轮动策略练习 - 泉水叮咚">
+  <meta name="twitter:description" content="昨天学习了 JoinQuant 上 【新手入门教程】简单市值轮动策略 ，今天练习一下。
+
+小市值策略
+A股市场常常推崇小市值公司，因此小市值策略在A股市场会获得不错的收益，常见的持证逻辑有：
+
+
+小市值的上市公司中有很多成长性公司，股价上升...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://wengsway.github.io/post/jian-dan-shi-zhi-lun-dong-ce-lue-lian-xi/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://wengsway.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://wengsway.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      泉水叮咚
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          简单市值轮动策略练习
+        </h1>
+        
+          <img src="https://i.loli.net/2020/09/13/srjTtIudOy2KoZp.jpg" alt="简单市值轮动策略练习" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-04-21 · 8 min read</div>
+          
+            <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Finance
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <p>昨天学习了 JoinQuant 上 <a href="https://www.joinquant.com/post/1817398711510a9672e1b34f3ff5056e?f=stydy&amp;m=guide">【新手入门教程】简单市值轮动策略</a> ，今天练习一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/09/13/srjTtIudOy2KoZp.jpg" alt="" loading="lazy"></figure>
+<h2 id="小市值策略">小市值策略</h2>
+<p>A股市场常常推崇小市值公司，因此小市值策略在A股市场会获得不错的收益，常见的持证逻辑有：</p>
+<ul>
+<li>
+<p>小市值的上市公司中有很多成长性公司，股价上升有基础。</p>
+</li>
+<li>
+<p>小市值的上市公司容易“蹭概念”，更容易被炒作。</p>
+</li>
+<li>
+<p>小市值公司容易被借壳。</p>
+</li>
+</ul>
+<h2 id="策略内容">策略内容</h2>
+<p>每隔10个交易日，等金额买入市值最小的6只股票，卖出其他股票。</p>
+<p>这里以A股的所有股票为例，运用上述策略。</p>
+<h2 id="初始化">初始化</h2>
+<p>按照策略的套路，先进行初始化设置。</p>
+<pre><code class="language-python">def initialize(context):
+    # 持有最小市值股票数
+    g.stocksnum = 6
+    # 轮动频率
+    g.period = 10
+    # 周期循环daily
+    run_daily(daily,time='every_bar')
+    # 记录策略进行到第几天，初始为1
+    g.days = 1
+    # 设定沪深300作为基准
+    set_benchmark('000300.XSHG')
+    # 使用动态复权（真实价格）
+    set_option('use_real_price', True)
+    # 设置买入时佣金万分之三，卖出时佣金万分之三加千分之一印花税, 每笔交易佣金最低扣5块钱
+    set_order_cost(OrderCost(open_tax=0, close_tax=0.001,
+                    open_commission=0.0003, close_commission=0.0003,
+                    close_today_commission=0, min_commission=5), type='stock')
+</code></pre>
+<p>由于A股的股票可能会发生变化，所以在初始化这里不做设置，而是放在每天都会循环的 run_daily 函数中，保证成分股数据是最新的。</p>
+<h2 id="每日循环">每日循环</h2>
+<p>每日循环部分要完成：<strong>选股、判断天数、进行买卖操作</strong>等步骤。</p>
+<h3 id="选股">选股</h3>
+<p>选股的流程可以简单概括为：确定股票池、获得股票池内每只股票的市值并<strong>从小到大</strong>排序、取出排在前6位的股票。</p>
+<h4 id="确定股票池">确定股票池</h4>
+<pre><code class="language-python"># 获取当前时间
+date=context.current_dt.strftime(&quot;%Y-%m-%d&quot;)
+# 获取A股所有股票的代码
+stocks=get_index_stocks('000300.XSHG')+get_index_stocks('399106.XSHE')
+</code></pre>
+<h4 id="获得市值并排序">获得市值并排序</h4>
+<pre><code class="language-python"># 获得stocks内股票市值并排序
+df = get_fundamentals(query(valuation.code
+    # 获取市值数据表中的股票代码
+    ).filter(valuation.code.in_(stocks)
+    # 根据 stocks 中的股票进行筛选
+    ).order_by(valuation.market_cap.asc()
+    # 按照市值从小到大排序
+    ), date= date
+    )
+</code></pre>
+<h4 id="取出前6位股票">取出前6位股票</h4>
+<pre><code class="language-python"># 取出 df 中前g.stocksnum名的股票代码，放在 buylist 中
+buylist =list(df['code'][:g.stocksnum])
+</code></pre>
+<h3 id="判断天数">判断天数</h3>
+<pre><code class="language-python"># 直接用 if 语句进行判断，每过一天，g.days 就加一天。
+if g.days % g.period == 1:
+    #这里放每日循环的内容
+</code></pre>
+<h3 id="买卖操作">买卖操作</h3>
+<pre><code class="language-python"># 对持有的股票进行判断：现在是否已经不在 buylist 里，如果是则卖出
+	for stock in context.portfolio.positions:
+        if stock not in buylist:
+            #调整 stock 的持仓为0，即卖出
+            order_target(stock, 0) 
+	# 将资金分成 g.stocksnum 份
+	position_per_cash=context.portfolio.cash/g.stocksnum
+	# 用 position_per_cash 大小的 g.stocksnum 份资金去买buylist 中的股票
+	for stock in buylist:
+        order_value(stock, position_per_cash)
+    else:
+        # 什么也不做
+        pass 
+</code></pre>
+<h3 id="天数累加">天数累加</h3>
+<pre><code class="language-python"># 每执行一次，天数增加1
+g.days = g.days + 1 
+</code></pre>
+<h2 id="策略结果">策略结果</h2>
+<h3 id="完整策略">完整策略</h3>
+<pre><code class="language-python">def initialize(context):
+    # 持有最小市值股票数
+    g.stocksnum = 6
+    # 轮动频率
+    g.period = 10
+    # 周期循环daily
+    run_daily(daily,time='every_bar')
+    # 记录策略进行到第几天，初始为1
+    g.days = 1
+    # 设定沪深300作为基准
+    set_benchmark('000300.XSHG')
+    # 使用动态复权（真实价格）
+    set_option('use_real_price', True)
+    # 设置买入时佣金万分之三，卖出时佣金万分之三加千分之一印花税, 每笔交易佣金最低扣5块钱
+    set_order_cost(OrderCost(open_tax=0, close_tax=0.001,
+                    open_commission=0.0003, close_commission=0.0003,
+                    close_today_commission=0, min_commission=5), type='stock')
+def daily(context):
+    # 直接用 if 语句进行判断，每过一天，g.days 就加一天。
+    if g.days % g.period == 1:
+        # 获取当前时间
+        date=context.current_dt.strftime(&quot;%Y-%m-%d&quot;)
+        # 获取A股所有股票的代码
+        stocks=get_index_stocks('000300.XSHG')+get_index_stocks('399106.XSHE')
+        # 获得stocks内股票市值并排序
+        df = get_fundamentals(query(valuation.code)
+                                    # 获取市值数据表中的股票代码 
+                                   .filter(valuation.code.in_(stocks))
+                                            # 根据 stocks 中的股票进行筛选
+                                           .order_by(valuation.market_cap.asc())
+                                                      # 按照市值从小到大排序
+                                                     ,date= date
+                             )
+        # 取出 df 中前g.stocksnum名的股票代码，放在 buylist 中
+        buylist =list(df['code'][:g.stocksnum])
+        # 对持有的股票进行判断：现在是否已经不在 buylist 里，如果是则卖出
+        for stock in context.portfolio.positions:
+            if stock not in buylist:
+                #调整 stock 的持仓为0，即卖出
+                order_target(stock, 0)
+        # 将资金分成 g.stocksnum 份
+        position_per_cash=context.portfolio.cash/g.stocksnum 
+        # 用 position_per_cash 大小的 g.stocksnum 份资金去买buylist 中的股票
+        for stock in buylist:
+            order_value(stock, position_per_cash)
+	else:
+        pass # 什么也不做
+	# 每执行一次，天数增加1
+    g.days = g.days + 1 
+</code></pre>
+<h3 id="回测结果">回测结果</h3>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/09/13/MfkrYpSTFJ5cIBP.png" alt="" loading="lazy"></figure>
+<p>上图中，四栏为一年。最大回测发生在图中的第一个绿点：2017-05-07，幅度为32.355%</p>
+<p>从图中超额收益线（黄色线）也可以看出，小市值轮动策略在2015—2017年上半年之间表现优异，而之后逐渐失去优势。</p>
+<h2 id="一些思考">一些思考</h2>
+<p>小市值策略根本的盈利逻辑是“低买高卖”，近几年表现不错是因为上市公司最低市值从几亿飙升到几十亿，正好站在了风口上。</p>
+<p>目前，A股市场上：</p>
+<ul>
+<li>市值小于20亿的股票：13只。</li>
+<li>市值位于20—50亿的股票：463只</li>
+<li>市值位于50—100亿的股票：419只</li>
+</ul>
+<p>目前，市值最小的3只股票是：友好集团（600778，10.06%）、山东金泰（600385，1.01%）和ST仰帆（600421，-0.28%）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Year</th>
+<th style="text-align:center">IPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2007</td>
+<td style="text-align:center">90</td>
+</tr>
+<tr>
+<td style="text-align:center">2008</td>
+<td style="text-align:center">74</td>
+</tr>
+<tr>
+<td style="text-align:center">2009</td>
+<td style="text-align:center">96</td>
+</tr>
+<tr>
+<td style="text-align:center">2010</td>
+<td style="text-align:center">363</td>
+</tr>
+<tr>
+<td style="text-align:center">2011</td>
+<td style="text-align:center">279</td>
+</tr>
+<tr>
+<td style="text-align:center">2012</td>
+<td style="text-align:center">152</td>
+</tr>
+<tr>
+<td style="text-align:center">2013</td>
+<td style="text-align:center">0<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+</tr>
+<tr>
+<td style="text-align:center">2014</td>
+<td style="text-align:center">263</td>
+</tr>
+<tr>
+<td style="text-align:center">2015</td>
+<td style="text-align:center">379</td>
+</tr>
+<tr>
+<td style="text-align:center">2016</td>
+<td style="text-align:center">346</td>
+</tr>
+<tr>
+<td style="text-align:center">2017</td>
+<td style="text-align:center">388</td>
+</tr>
+</tbody>
+</table>
+<p>但由于近几年新股发行越来越快，小市值公司越来越多，而且用于回测的时间段正好是炒作壳价值的时间，这一策略的效果估计不会有现在这么好。</p>
+<p>知乎用户<a href="https://www.zhihu.com/people/liang-hua-shi">量化师</a>在一个<a href="https://www.zhihu.com/question/54555068">回答</a>中提到：</p>
+<blockquote>
+<p>不难看出，小市值股票比例越高，长期收益也越高，这就是之前说的两个内因在起作用。但是，在小市值策略的收益来源中，即使我们以涨得最多的中证1000指数来对标，其版块上行带来的收益也就最多占了其中的三成，那剩下38.85%的年化收益其实就是轮动带来的超额收益。换句话说，只要轮动收益大于同时段内版块下跌的损失，最终就可以取得正收益。</p>
+<p><strong>轮动收益=轮动频率*轮动波幅</strong></p>
+<p>A股市场小市值股票之所以存在超高的轮动收益，很大程度上是来源于市场中大量的非理性散户行为，比如借壳、重组、题材概念、还有完全没道理的高送配等等，但随着市场环境的变化以及监管力度的加强，小市值股票短期内暴涨暴跌的现象肯定会逐渐受到遏制，个股波动的频率和波幅会日趋减小，必然会影响小市值策略未来的预期收益率。</p>
+</blockquote>
+<p>简而言之，小市值轮动策略不抗跌。</p>
+<p>在 JoinQuant 社区里搜索“市值轮动”，发现有191个帖子，而且更新时间都很新，看来市值轮动策略还是受到很多人的关注的，不知这一策略在美股市场表现如何，后续如有条件会更新。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>2013年A股IPO停滞 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+        
+
+        
+          <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script type="application/javascript" src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script type="application/javascript">
+
+var options = {
+  shortname: 'wengsway',
+  apikey: 'OH3ecd0RzHxNVCLmLoqmcHRDb9Gy40HK10DGjWFAWr6A4i2hx25TsT9O7o5rhOdf',
+}
+if ('https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/') {
+  options.api = 'https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+        
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%B0%8F%E5%B8%82%E5%80%BC%E7%AD%96%E7%95%A5">小市值策略</a></li>
+<li><a href="#%E7%AD%96%E7%95%A5%E5%86%85%E5%AE%B9">策略内容</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E6%AF%8F%E6%97%A5%E5%BE%AA%E7%8E%AF">每日循环</a>
+<ul>
+<li><a href="#%E9%80%89%E8%82%A1">选股</a>
+<ul>
+<li><a href="#%E7%A1%AE%E5%AE%9A%E8%82%A1%E7%A5%A8%E6%B1%A0">确定股票池</a></li>
+<li><a href="#%E8%8E%B7%E5%BE%97%E5%B8%82%E5%80%BC%E5%B9%B6%E6%8E%92%E5%BA%8F">获得市值并排序</a></li>
+<li><a href="#%E5%8F%96%E5%87%BA%E5%89%8D6%E4%BD%8D%E8%82%A1%E7%A5%A8">取出前6位股票</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%A4%E6%96%AD%E5%A4%A9%E6%95%B0">判断天数</a></li>
+<li><a href="#%E4%B9%B0%E5%8D%96%E6%93%8D%E4%BD%9C">买卖操作</a></li>
+<li><a href="#%E5%A4%A9%E6%95%B0%E7%B4%AF%E5%8A%A0">天数累加</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AD%96%E7%95%A5%E7%BB%93%E6%9E%9C">策略结果</a>
+<ul>
+<li><a href="#%E5%AE%8C%E6%95%B4%E7%AD%96%E7%95%A5">完整策略</a></li>
+<li><a href="#%E5%9B%9E%E6%B5%8B%E7%BB%93%E6%9E%9C">回测结果</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83">一些思考</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://wengsway.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+    
+  
+</body>
+
+</html>
