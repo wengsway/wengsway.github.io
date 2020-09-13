@@ -26,6 +26,7 @@
 </head>
 <body>
   <div class="antialiased flex flex-col min-h-screen" id="app">
+
     <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
   <div class="flex justify-end px-4">
     <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
@@ -56,37 +57,59 @@
     </a>
   </nav>
 </div>
+
     <div class="max-w-4xl w-full mx-auto pt-32">
-      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              Finance（13）
-            </a>
-          </div>
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/about/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-04-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              Other（2）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://wengsway.github.io/tag/aMCLnEJ86U/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              Life（4）
-            </a>
-          </div>
-        
+
+欢迎来到我的小站呀，很高兴遇见你！🤝
+
+🏠 关于本站
+折腾过 Typecho、Wordpress、Hexo 后，倦了，把网站转移到 Github Page，感谢 Gridea ❤
+👨‍💻 博主是谁
+96年小生，年轻，上班族，金融...
       </div>
+      <a href="https://wengsway.github.io/post/about/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://wengsway.github.io/page/2/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+  </div>
+
       <footer class="py-12 text-center px-4 md:px-0" v-pre>
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 </footer>
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://wengsway.github.io/media/scripts/main.js"></script>
 </body>
+
 </html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wengsway.github.io</id>
     <title>泉水叮咚</title>
-    <updated>2020-09-13T07:38:36.674Z</updated>
+    <updated>2020-09-13T07:42:58.024Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wengsway.github.io"/>
     <link rel="self" href="https://wengsway.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://wengsway.github.io/images/avatar.png</logo>
     <icon>https://wengsway.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 泉水叮咚</rights>
+    <entry>
+        <title type="html"><![CDATA[CPA 会计分录 第 7 章]]></title>
+        <id>https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/</id>
+        <link href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/">
+        </link>
+        <updated>2018-10-13T07:39:42.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[三个Python编程小练习]]></title>
         <id>https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/</id>
@@ -72,16 +79,5 @@
         <link href="https://wengsway.github.io/post/di-1-zhang-zong-lun/">
         </link>
         <updated>2018-06-29T07:27:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[下载 Coursera 课程的好方法]]></title>
-        <id>https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/</id>
-        <link href="https://wengsway.github.io/post/xia-zai-coursera-ke-cheng-de-hao-fang-fa/">
-        </link>
-        <updated>2018-05-17T07:26:07.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近在学习 <a href="https://www.coursera.org/">Coursera</a> 上的一些课程，今天感到用校园网在线看实在是太慢了，视频经常刷不出来啊！！！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>最近在学习 <a href="https://www.coursera.org/">Coursera</a> 上的一些课程，今天感到用校园网在线看实在是太慢了，视频经常刷不出来啊！！！</p>
-]]></content>
     </entry>
 </feed>
