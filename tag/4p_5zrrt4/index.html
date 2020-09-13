@@ -1,325 +1,283 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Other | 泉水叮咚</title>
-<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico?v=1599987233184">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
 <link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Other | 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="alternate" type="application/atom+xml" title="泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-117938981-1');
+  </script>
+    
 
-  gtag('config', 'UA-117938981-1');
-</script>
+  <meta name="description" content="欢迎来到我的小站呀，很高兴遇见你！🤝" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-
-  <meta name="description" content="欢迎来到泉水叮咚的博客❤" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://wengsway.github.io">
-  <img class="avatar" src="https://wengsway.github.io/images/avatar.png?v=1599987233184" alt="">
-  </a>
-  <h1 class="site-title">
-    泉水叮咚
-  </h1>
-  <p class="site-description">
-    欢迎来到我的小站呀，很高兴遇见你！🤝
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
-        <a href="https://github.com/wengsway" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
-        <a href="https://weibo.com/wengsway " target="_blank">
-          <i class="ri-weibo-line"></i>
-        </a>
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-        <a href="https://www.facebook.com/quan.weng" target="_blank">
-          <i class="ri-facebook-line"></i>
-        </a>
-      
-    
-  </div>
+    <a href="https://wengsway.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Other
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/">
-        <h2 class="post-title">Stata 处理面板数据的相关命令</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-02-07
-        </span>
-        <span>
-          8 min read
-        </span>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Other
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/wengsway/Graphbed/master/img/panel-data.png')">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Stata 处理面板数据的相关命令
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>在撰写论文时，我们通常会用到面板数据进行分析。Stata 是目前主流的计量软件之一，具有处理数据高效、回归模型丰富和可输出计量结果等特点。本文记录一些用 Stata 处理面板数据的命令，以备日后所需。</p>
 
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/">
-        <h2 class="post-title">华科经济学院数据库使用说明</h2>
+      <a href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2019-03-30
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/wengsway/Graphbed/master/img/hua-ke-jing-yuan-shu-ju-ku.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/">
-        <h2 class="post-title">Python 编程：从入门到实践</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-02-07
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/wengsway/Graphbed/master/img/cong-ru-men-dao-shi-jian.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/python-course-homework4/">
-        <h2 class="post-title">Python Course homework4</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-10
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/python-course-homework4/" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/wengsway/Graphbed/master/img/python-course-homework-4.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/python-class-homework-2/">
-        <h2 class="post-title">Python Class homework 2</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-10-31
-        </span>
-        <span>
-          5 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/python-class-homework-2/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/a1xTdvyLglYDwhq.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/python-class-homework-1/">
-        <h2 class="post-title">Python Class homework 1</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-10-31
-        </span>
-        <span>
-          7 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/python-class-homework-1/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/JWwhgv7yfFPQZoe.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/">
-        <h2 class="post-title">三个Python编程小练习</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-10-12
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/sRHj8TiA5eL7CWb.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/">
-        <h2 class="post-title">Stata 14 和 Stata 15.1 下载</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-09-17
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="post-tag">
-            # Other
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/FAIdseEk4MYuyWJ.png')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://wengsway.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/panel-data.png" alt="Stata 处理面板数据的相关命令">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          华科经济学院数据库使用说明
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1. Wind 资讯金融终端
+
+地点：经济学院 109 实验室 | 经济学院 428 数据中心
+
+对象
+- 研究生：109 实验室
+
+教师：109 实验室和 428 数据中心
+
+
+开放时间
+
+109 实验室：周一、周四、周五
+428 数据中...
+      </div>
+      <a href="https://wengsway.github.io/post/hua-ke-jing-ji-xue-yuan-shu-ju-ku-shi-yong-shuo-ming/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/hua-ke-jing-yuan-shu-ju-ku.jpg" alt="华科经济学院数据库使用说明">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Python 编程：从入门到实践
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-02-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        分享一本关于 Python 基础知识的书籍。
+讲解清晰易懂，循序渐进，后续章节含有几个实践项目。
+
+PDF文件下载：Python 编程：从入门到实践
+为了记录自己的学习过程，我在 GitHub 上创建了一个项目 study-intro-pr...
+      </div>
+      <a href="https://wengsway.github.io/post/python-bian-cheng-cong-ru-men-dao-shi-jian/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/cong-ru-men-dao-shi-jian.jpg" alt="Python 编程：从入门到实践">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/python-course-homework4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Python Course homework4
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-10</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Exercise 1
+Plot the function
+f(x)=cos⁡(πθx)exp⁡(−x)f(x) = \cos(\pi \theta x) \exp(-x)
+f(x)=cos(πθx)exp(−x)
+over the inte...
+      </div>
+      <a href="https://wengsway.github.io/post/python-course-homework4/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/python-course-homework-4.png" alt="Python Course homework4">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/python-class-homework-2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Python Class homework 2
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Exercise 1
+Part 1: Given two numeric lists or tuples x_vals and y_vals of equal length, compute their inner product usin...
+      </div>
+      <a href="https://wengsway.github.io/post/python-class-homework-2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/a1xTdvyLglYDwhq.jpg" alt="Python Class homework 2">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/python-class-homework-1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Python Class homework 1
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Exercise 1
+Recall that n!n! is read as “nn factorial” and defined as n!=n×(n−1)×⋯×2×1n!=n×(n−1)×⋯×2×1
+There are function...
+      </div>
+      <a href="https://wengsway.github.io/post/python-class-homework-1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/JWwhgv7yfFPQZoe.jpg" alt="Python Class homework 1">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          三个Python编程小练习
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Phone Number Check
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+Created on Tue Sep 25 23:24:19 2018
+
+@author: Wengsway
+
+&q...
+      </div>
+      <a href="https://wengsway.github.io/post/san-ge-python-bian-cheng-xiao-lian-xi/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/sRHj8TiA5eL7CWb.png" alt="三个Python编程小练习">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Stata 14 和 Stata 15.1 下载
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-09-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        关于 Stata 的详细介绍可查看 Stata 官网和 Stata-Wikipedia
+这里分享 Stata 14 和 Stata 15.1 两个版本的软件。
+上述软件均从互联网收集，侵删。
+本人安装了 Stata 14，将 STATA.L...
+      </div>
+      <a href="https://wengsway.github.io/post/stata-14-he-stata-151-xia-zai/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/FAIdseEk4MYuyWJ.png" alt="Stata 14 和 Stata 15.1 下载">
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
+</body>
 </html>

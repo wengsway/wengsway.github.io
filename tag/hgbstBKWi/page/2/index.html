@@ -1,383 +1,375 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Finance | 泉水叮咚</title>
-<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico?v=1599987233184">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
 <link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Finance | 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="alternate" type="application/atom+xml" title="泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-117938981-1');
+  </script>
+    
 
-  gtag('config', 'UA-117938981-1');
-</script>
+  <meta name="description" content="欢迎来到我的小站呀，很高兴遇见你！🤝" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-
-  <meta name="description" content="欢迎来到泉水叮咚的博客❤" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://wengsway.github.io">
-  <img class="avatar" src="https://wengsway.github.io/images/avatar.png?v=1599987233184" alt="">
-  </a>
-  <h1 class="site-title">
-    泉水叮咚
-  </h1>
-  <p class="site-description">
-    欢迎来到我的小站呀，很高兴遇见你！🤝
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-  <div class="social-container">
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
     
-      
-        <a href="https://github.com/wengsway" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
     
-      
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
     
-      
-        <a href="https://weibo.com/wengsway " target="_blank">
-          <i class="ri-weibo-line"></i>
-        </a>
-      
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
     
-      
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
     
-      
-        <a href="https://www.facebook.com/quan.weng" target="_blank">
-          <i class="ri-facebook-line"></i>
-        </a>
-      
-    
-  </div>
+    <a href="https://wengsway.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Finance
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/">
-        <h2 class="post-title">CPA 会计分录 第 8 至 9 章</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-10-14
-        </span>
-        <span>
-          5 min read
-        </span>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Finance
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/KIJalAj3q9Gs1Lv.jpg')">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          CPA 会计分录 第 8 至 9 章
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        整理的 CPA 第8至9章资产减值和负债的会计分录
+相关文章：CPA 会计分录 第 7 章
+Chapter 8 资产减值
+
+资产减值损失
+
+借：资产减值损失
+贷：xx减值准备
+
+
+商誉减值的会计处理
+
+吸收合并（个别报表）
+
+借：资产减值损...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/">
-        <h2 class="post-title">CPA 会计分录 第 7 章</h2>
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-8-zhi-9-zhang/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-10-13
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/TCPHSR9W53Mdb1u.jpg')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/KIJalAj3q9Gs1Lv.jpg" alt="CPA 会计分录 第 8 至 9 章">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          CPA 会计分录 第 7 章
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-13</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        整理的 CPA 第7章长期股权投资与合营安排的会计分录
+相关文章：CPA 会计分录 第 3 至 6 章
+Chapter 7 长期股权投资与合营安排
+
+同一控制下控股合并形成的对子公司长期股权投资
+
+合并方以支付现金、转让非现金资产或承担债务...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/">
-        <h2 class="post-title">CPA 会计分录 第 3 至 6 章</h2>
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-7-zhang/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-10-12
-        </span>
-        <span>
-          7 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/C7DUVZiwNl6T15u.jpg')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/TCPHSR9W53Mdb1u.jpg" alt="CPA 会计分录 第 7 章">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          CPA 会计分录 第 3 至 6 章
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-10-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Chapter 3 存货
+
+
+对外销售商品结转成本
+借：主营业务成本
+​	    存货跌价准备
+​	贷：库存商品
+
+
+对外销售材料结转成本
+借：其他业务成本
+​	   存货跌价准备
+​	贷：原材料
+
+
+包装物的会计处理
+
+
+生产领用的包装物...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/">
-        <h2 class="post-title">Financial Statistics and Econometrics：Homework 1</h2>
+      <a href="https://wengsway.github.io/post/cpa-hui-ji-fen-lu-di-3-zhi-6-zhang/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-09-30
-        </span>
-        <span>
-          29 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/YygLnblWxeJ6RPA.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/C7DUVZiwNl6T15u.jpg" alt="CPA 会计分录 第 3 至 6 章">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Financial Statistics and Econometrics：Homework 1
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-09-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        第一部分
+
+令  X1,X2,⋯ ,XnX_1,X_2,\cdots,X_nX1​,X2​,⋯,Xn​ 为来自韦伯分布的独立同分布的随机样本，PDFPDFPDF 为：
+
+f(x,θ)={αβXα−1exp−Xα/β,    X  &gt; ...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/">
-        <h2 class="post-title">第3章 存货学习笔记</h2>
+      <a href="https://wengsway.github.io/post/financial-statistics-and-econometricshomework-1/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-07-03
-        </span>
-        <span>
-          12 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/DGFIBpnRmdZhqvb.jpg')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/YygLnblWxeJ6RPA.png" alt="Financial Statistics and Econometrics：Homework 1">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          第3章 存货学习笔记
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-07-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1 存货的确认和初始计量
+1.1 存货的性质和确认条件
+1.1.1 存货的定义
+存货是指企业在日常活动中持有以备出售的产成品或商品、处在生产过程中的在产品、在生产过程或提供劳务过程中耗用的材料、物料等。关键点是最终目的是出售。
+1.1.2 ...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/">
-        <h2 class="post-title">第2章 会计政策、会计估计及其变更和差错更正</h2>
+      <a href="https://wengsway.github.io/post/di-3-zhang-cun-huo-xue-xi-bi-ji/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-06-30
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/wlbKVC96kfQLApq.jpg')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/DGFIBpnRmdZhqvb.jpg" alt="第3章 存货学习笔记">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          第2章 会计政策、会计估计及其变更和差错更正
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-06-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1 会计政策及其变更的概述
+1.1 会计政策的定义
+会计政策是指企业在会计确认、计量和报告中所采用的原则、基础和会计处理方法。
+1.2 会计政策的特点
+
+会计政策的选择性：某些经济业务在符合会计原则和计量基础的要求下，存在多种可供选择的会计...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/">
-        <h2 class="post-title">第1章 总论学习笔记</h2>
+      <a href="https://wengsway.github.io/post/di-2-zhang-hui-ji-zheng-ce-hui-ji-gu-ji-ji-qi-bian-geng-he-chai-cuo-geng-zheng/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-06-29
-        </span>
-        <span>
-          14 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/yNAhpXnbR5SQ6Cf.png')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/wlbKVC96kfQLApq.jpg" alt="第2章 会计政策、会计估计及其变更和差错更正">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          第1章 总论学习笔记
         </a>
-      
-      <div class="post-abstract">
-        
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-06-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1 会计概述
+1.1 会计的定义
+会计是以货币为主要计量单位，反映和监督一个单位经济活动的一种经济管理工作。
+1.2 会计的作用
+
+提供决策有用的信息，提高企业透明度，规范企业行为。
+加强经营管理，提高经济效益，促进企业可持续发展。
+考核企...
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/">
-        <h2 class="post-title">资管新规落地</h2>
+      <a href="https://wengsway.github.io/post/di-1-zhang-zong-lun/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-05-10
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/QiLtH6uoO5XgSWn.jpg')">
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/yNAhpXnbR5SQ6Cf.png" alt="第1章 总论学习笔记">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          资管新规落地
         </a>
-      
-      <div class="post-abstract">
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-05-10</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>2017年11月17日，央行就《关于规范金融机构资产管理业务的指导意见（征求意见稿）》公开征求意见。</p>
 <p>2018年4月27日，央行会同证监会等部门联合印发《关于规范金融机构资产管理业务的指导意见》。</p>
 <p>至此，讨论了5个月的资产管理新规落地。</p>
 
       </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/">
-        <h2 class="post-title">中国著名微观数据库</h2>
+      <a href="https://wengsway.github.io/post/zi-guan-xin-gui-luo-di/" class="btn">
+        Read more
       </a>
-      <div class="post-info">
-        <span>
-          2018-04-30
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/idwOQUZvbTGIsXe.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/">
-        <h2 class="post-title">廿年磨一剑，李小加为香港召唤独角兽</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-04-30
-        </span>
-        <span>
-          23 min read
-        </span>
-        
-          <a href="https://wengsway.github.io/tag/hgbstBKWi/" class="post-tag">
-            # Finance
-          </a>
-        
-      </div>
-      
-        <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/" class="post-feature-image" style="background-image: url('https://i.loli.net/2020/09/13/vswCE6l4xm7KjVU.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-    <a href="https://wengsway.github.io/tag/hgbstBKWi" class="prev-page">上一页</a>
-  
-  
-    <a href="https://wengsway.github.io/tag/hgbstBKWi/page/3/" class="next-page">下一页</a>
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://wengsway.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
     </div>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/QiLtH6uoO5XgSWn.jpg" alt="资管新规落地">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          中国著名微观数据库
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-04-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        UHS
+中文名：中国城镇住户调查数据
+英文名：Urban Household Survey
+网址：https://www.ceicdata.com/en/china/no-of-household-surveyed-city
+
+非官网
+
+C...
+      </div>
+      <a href="https://wengsway.github.io/post/zhong-guo-zhu-ming-wei-guan-shu-ju-ku/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/idwOQUZvbTGIsXe.jpg" alt="中国著名微观数据库">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          廿年磨一剑，李小加为香港召唤独角兽
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-04-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        本文转载自智通财经网
+智通财经APP获悉，港交所(00388.HK)公布，大致落实《上市规则修订谘询文件》的建议，将于下周一起生效，并接受公司申请上市，预计首批公司在6月至7月根据新制度上市。
+在4月24日收盘后召开的关于上市规则架构谘询的...
+      </div>
+      <a href="https://wengsway.github.io/post/nian-nian-mo-yi-jian-li-xiao-jia-wei-xiang-gang-zhao-huan-du-jiao-shou/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2020/09/13/vswCE6l4xm7KjVU.jpg" alt="廿年磨一剑，李小加为香港召唤独角兽">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://wengsway.github.io/tag/hgbstBKWi" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://wengsway.github.io/tag/hgbstBKWi/page/3/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
+</body>
 </html>
