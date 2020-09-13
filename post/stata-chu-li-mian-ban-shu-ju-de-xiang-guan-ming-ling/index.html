@@ -1,0 +1,560 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Stata 处理面板数据的相关命令 - 泉水叮咚</title>
+<link rel="shortcut icon" href="https://wengsway.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://wengsway.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://wengsway.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Stata 处理面板数据的相关命令 - 泉水叮咚 - Atom Feed" href="https://wengsway.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117938981-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-117938981-1');
+  </script>
+    
+
+  <meta name="description" content="在撰写论文时，我们通常会用到面板数据进行分析。Stata 是目前主流的计量软件之一，具有处理数据高效、回归模型丰富和可输出计量结果等特点。本文记录一些用 Stata 处理面板数据的命令，以备日后所需。
+
+本文使用的环境：
+
+系统：Win10..." />
+  <meta property="og:title" content="Stata 处理面板数据的相关命令 - 泉水叮咚">
+  <meta property="og:description" content="在撰写论文时，我们通常会用到面板数据进行分析。Stata 是目前主流的计量软件之一，具有处理数据高效、回归模型丰富和可输出计量结果等特点。本文记录一些用 Stata 处理面板数据的命令，以备日后所需。
+
+本文使用的环境：
+
+系统：Win10..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/panel-data.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Stata 处理面板数据的相关命令 - 泉水叮咚">
+  <meta name="twitter:description" content="在撰写论文时，我们通常会用到面板数据进行分析。Stata 是目前主流的计量软件之一，具有处理数据高效、回归模型丰富和可输出计量结果等特点。本文记录一些用 Stata 处理面板数据的命令，以备日后所需。
+
+本文使用的环境：
+
+系统：Win10...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://wengsway.github.io/post/stata-chu-li-mian-ban-shu-ju-de-xiang-guan-ming-ling/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://wengsway.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://wengsway.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      泉水叮咚
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Stata 处理面板数据的相关命令
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/panel-data.png" alt="Stata 处理面板数据的相关命令" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2020-02-07 · 8 min read</div>
+          
+            <a href="https://wengsway.github.io/tag/4p_5zrrt4/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Other
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <p>在撰写论文时，我们通常会用到面板数据进行分析。Stata 是目前主流的计量软件之一，具有处理数据高效、回归模型丰富和可输出计量结果等特点。本文记录一些用 Stata 处理面板数据的命令，以备日后所需。</p>
+<!-- more -->
+<p>本文使用的环境：</p>
+<blockquote>
+<p>系统：Win10</p>
+<p>Stata 版本：StataSE 15(64-bit)</p>
+</blockquote>
+<p>Stata 14 和 15.1 下载地址：https://www.wengsway.com/2018/09/17/stata-download/</p>
+<h2 id="1-面板数据的格式">1. 面板数据的格式</h2>
+<h3 id="11-导入数据">1.1 导入数据</h3>
+<p>Stata 中要求的面板数据的格式如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">company</th>
+<th style="text-align:center">year</th>
+<th style="text-align:center">var1</th>
+<th style="text-align:center">var2</th>
+<th style="text-align:center">var3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017</td>
+<td style="text-align:center">123</td>
+<td style="text-align:center">789</td>
+<td style="text-align:center">741</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018</td>
+<td style="text-align:center">456</td>
+<td style="text-align:center">246</td>
+<td style="text-align:center">258</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2019</td>
+<td style="text-align:center">789</td>
+<td style="text-align:center">123</td>
+<td style="text-align:center">963</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2017</td>
+<td style="text-align:center">246</td>
+<td style="text-align:center">222</td>
+<td style="text-align:center">475</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2018</td>
+<td style="text-align:center">135</td>
+<td style="text-align:center">444</td>
+<td style="text-align:center">569</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2019</td>
+<td style="text-align:center">369</td>
+<td style="text-align:center">777</td>
+<td style="text-align:center">124</td>
+</tr>
+<tr>
+<td style="text-align:center">……</td>
+<td style="text-align:center">……</td>
+<td style="text-align:center">……</td>
+<td style="text-align:center">……</td>
+<td style="text-align:center">……</td>
+</tr>
+</tbody>
+</table>
+<p>但我们在准备数据时，通常是一个变量一个 Sheet，每一个 Sheet 里是 N 个 Company 和 N 个 Year，如何处理成 Stata 要求的面板数据格式呢？</p>
+<p>方法①：数据量小，手动处理💪</p>
+<p>方法②：借助 Stata reshape 命令，请自行 help reshape 查看，因为我也没用过😅。</p>
+<p>方法③：先在 Excel 中处理成要求的格式，在复制粘贴到 Stata（推荐👍）</p>
+<p>下面用一个 Gif 说明方法③</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/wengsway/Graphbed/master/img/excel-chu-li-shu-ju-wei-mian-ban-ge-shi-shu-ju.gif" alt="" loading="lazy"></figure>
+<p>对所有的变量采用方法③，汇总后即可得到 Stata 要求的面板格式的数据。将汇总后的数据粘贴到 Stata 中，完成数据的导入工作。</p>
+<h3 id="12-设置数据">1.2 设置数据</h3>
+<p>观察导入到 Stata 中的数据是否出现红色的数字，若没有飘红的数字，则数据OK。若出现飘红的数字，则说明该数字为字符型，不是数字型。按照下述命令进行处理：</p>
+<ul>
+<li>使用命令 <code>gen newvar = real(var)</code> 将该变量的值转化为数字型</li>
+<li>使用命令 <code>drop var</code> 删除原有变量</li>
+<li>使用命令 <code>rename var newvar</code> 重新命名新生成的变量名为最初的变量名</li>
+</ul>
+<p>数据达到使用标准后，需要将数据设置为面板数据的格式，使用命令 <code>tsset company year</code> 进行设置，程序将会输出类似于下述结果：</p>
+<pre><code>panel variable: company, 1 to 10
+time variable: time, 1 to 10
+</code></pre>
+<p>至此，完成数据导入和设置的工作。</p>
+<h3 id="13-关于季度时间的问题">1.3 关于季度时间的问题</h3>
+<p>如果面板数据的时间跨度为季度，则Excel中处理的诸如<code>2019q1</code>的日期在 Stata 并不可直接使用，还需要进行转换。因为 Stata 会将<code>2019q1</code>识别为文本，而不是日期型数值。</p>
+<p>假设季度时间列的变量名为 quarter，则使用下列命令可以得到正确的日期序列。</p>
+<ul>
+<li><code>gen newquarter = quarterly(quarter,&quot;YQ&quot;)</code> ——核心命令</li>
+<li><code>form newquarter %tq</code> ——核心命令</li>
+<li><code>drop quarter</code> ——删除原日期序列</li>
+<li><code>rename newquarter quarter</code> ——重命名新日期序列</li>
+</ul>
+<h2 id="2-统计描述">2. 统计描述</h2>
+<p>在正式的模型估计前，需要对数据的进行描述性统计，可使用的命令有：</p>
+<ul>
+<li>
+<p><code>xtdes</code> ：对面板数据的截面个数和时间跨度进行描述</p>
+</li>
+<li>
+<p><code>xtsum</code> ：对面板数据进行分组内、组间和整体的描述性统计（常用）</p>
+</li>
+<li>
+<p><code>xttab</code> ：以列表的形式展示某个变量的分布</p>
+</li>
+<li>
+<p><code>tab</code> ：按行业进行统计，具体命令 <code>tab IndVar if year == 2019</code></p>
+</li>
+<li>
+<p><code>bysort</code> ：按年度进行统计，具体命令 <code>bysort year: tab IndVar</code></p>
+</li>
+<li>
+<p><code>by &amp; egen</code>：产生组内均值，具体命令 <code>by company: egen meanvar = mean(var1)</code></p>
+</li>
+</ul>
+<h2 id="3-生成相关系数表">3. 生成相关系数表</h2>
+<p>Stata 的生成相关系数表命令得到的结果不带星号（代表不同的显著性水平），我通常使用的是 <a href="http://blog.cnfol.com/arlion">中山大学连玉君老师</a> 编写的<code>pwcorr_a</code>命令，使用方法如下所示：</p>
+<ul>
+<li>下载ado文件：<a href="https://pan.baidu.com/s/1-efcQ5CI3oIlYr41jhujQQ">Stata 输出带星号的相关系数表ado文件</a> 提取码: j9gz</li>
+<li>将其中的 <code>pwcorr_a.ado</code> 文件放入 Stata 安装目录下的 <code>/ado/base/p</code> 文件夹中，将其中的 <code>spearman_a.ado</code> 文件放入 Stata 安装目录下的 <code>/ado/base/s</code> 文件夹中。</li>
+<li>使用命令 <code>pwcorr_a var1 var2 var3 ... varn, star1(0.01) star5(0.05) star10(0.1)</code> 就能得到带星号的相关系数表</li>
+</ul>
+<h2 id="4-数据平稳性和协整检验">4. 数据平稳性和协整检验</h2>
+<p>我通常碰到短面板（N 远大于T），短面板可使用命令 <code>xtunitroot ips var</code> 来检验是否存在单位根过程，P值小于0.05说明该变量不存在单位根过程，数据是平稳的。</p>
+<p>若不平稳，可能涉及对差分后的数据再次进行平稳性检验。</p>
+<ul>
+<li>生成差分后的变量可以使用命令 <code>gen newvar = D.var</code></li>
+<li>生成滞后一阶的变量可使用命令 <code>gen newvar = L.var</code></li>
+</ul>
+<p>Stata 15及以上版本，已自带面板协整检验命令。使用命令 <code>xtcointtest kao depvar varlist</code> 来检验面板数据是否通过协整检验，P值小于0.05说明通过协整检验。</p>
+<h2 id="5-回归分析">5. 回归分析</h2>
+<p>面板数据的回归分析通常使用 <code>xtreg</code> 命令，具体而言：</p>
+<p><code>xtreg depvar varlist [if exp], model_type [level(#)]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">model_type</th>
+<th style="text-align:center">模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">be</td>
+<td style="text-align:center">Between-effects estimator</td>
+</tr>
+<tr>
+<td style="text-align:center">fe</td>
+<td style="text-align:center">Fixed-effects estimator</td>
+</tr>
+<tr>
+<td style="text-align:center">re</td>
+<td style="text-align:center">GLS Random-effects estimator</td>
+</tr>
+<tr>
+<td style="text-align:center">pa</td>
+<td style="text-align:center">GEE population-averaged estimator</td>
+</tr>
+<tr>
+<td style="text-align:center">mle</td>
+<td style="text-align:center">Maximum-likelihood Random-effects estimator</td>
+</tr>
+</tbody>
+</table>
+<p>说明：</p>
+<ul>
+<li>如果不填 model type 项，则 Stata 默认采用 GLS 方法估计随机效应模型</li>
+<li>level(#)通常用于标注显著性水平，默认值为95%，若需调整为99%显著性水平，设置为level(99)即可实现。</li>
+</ul>
+<p>通常情况下，会使用混合OLS模型、固定效应模型和随机效应模型三种模型，得到三种模型的回归结果，再做模型之间的比较和选择。</p>
+<ul>
+<li><code>xtreg depvar varlist,fe</code> 固定效应模型，若P值小于0.05，则表明固定效应非常显著，固定效应模型优于混合OLS模型。</li>
+<li><code>xtreg depvar varlist,re</code> 随机效应模型，再输入命令 <code>xttest0</code> ，若结果中的P值小于0.05，则表明随机效应也非常显著，随机效应模型也优于混合OLS模型。</li>
+<li>使用 Hausman 检验来判断是选择固定效应模型还是随机效应模型：</li>
+</ul>
+<pre><code>qui xtreg depvar varlist,fe
+est store fe
+qui xtreg depvar varlist,re
+est store re
+hausman fe
+</code></pre>
+<p>说明：<code>qui</code> 可以使 Stata 不在界面上输出结果。</p>
+<p>若 Hausman 检验结果的P值远小于0.05，则拒绝 Hausman 检验的原假设（个体效应适合随机效应模型），认为固定效应模型更适合该样本。</p>
+<h2 id="6-时间效应-序列相关和截面相关的检验">6. 时间效应、序列相关和截面相关的检验</h2>
+<h3 id="61-时间效应">6.1 时间效应</h3>
+<p>若需加入时间效应，则应使用时间虚拟变量来实现。</p>
+<pre><code>tab year, gen(dumt)				# 生成T个年度虚拟变量
+drop dumt1						# 删除第一个虚拟变量以避免共线性
+</code></pre>
+<p>加入时间虚拟变量的模型则为：</p>
+<pre><code>xtreg depvar varlist dumt*,fe
+xtreg depvar varlist dumt*,re
+</code></pre>
+<p>检验时间效应的命令为：</p>
+<pre><code>test dumt2 = dumt3 = ... = dumtn = 0
+</code></pre>
+<p>假设 <code>T=n</code> ，所以有 <code>n-1</code> 个时间虚拟变量</p>
+<h3 id="62-序列相关">6.2 序列相关</h3>
+<p>对于固定效应模型：</p>
+<pre><code>xtserial depvar varlist
+</code></pre>
+<p>若P值小于0.05，则可以在5%的显著性水平上拒绝不存在序列相关的原假设，反之则反。</p>
+<p>对于随机效应模型：</p>
+<p>先安装 <code>xttest1</code> 命令：<code>search xttest1, net</code></p>
+<pre><code>qui xtreg depvar varlist,re
+xttest1
+</code></pre>
+<p>若P值小于0.05，则说明存在随机效应和序列相关，而且对随机效应和序列相关的联合检验也显著。</p>
+<h3 id="63-截面相关检验">6.3 截面相关检验</h3>
+<p>面板数据的截面之间可能存在相关性，可以使用如下命令来检验固定效应模型中截面之间的相关性是否显著。</p>
+<pre><code>qui xtreg depvar varlist, fe xttest2
+</code></pre>
+<p>若P值小于0.05，则说明不同截面之间存在显著的相关性。</p>
+<p>参考材料：<a href="https://pan.baidu.com/s/1PNI2fV6ti9K_qjGh7uz5Zg">连玉君：面板讲义</a> 提取码: kvva</p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+        
+
+        
+          <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script type="application/javascript" src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script type="application/javascript">
+
+var options = {
+  shortname: 'wengsway',
+  apikey: 'OH3ecd0RzHxNVCLmLoqmcHRDb9Gy40HK10DGjWFAWr6A4i2hx25TsT9O7o5rhOdf',
+}
+if ('https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/') {
+  options.api = 'https://disqus.com/api/oauth/2.0/4ab6467b95e54fd387aa938dfe99772c/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+        
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E9%9D%A2%E6%9D%BF%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A0%BC%E5%BC%8F">1. 面板数据的格式</a>
+<ul>
+<li><a href="#11-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE">1.1 导入数据</a></li>
+<li><a href="#12-%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE">1.2 设置数据</a></li>
+<li><a href="#13-%E5%85%B3%E4%BA%8E%E5%AD%A3%E5%BA%A6%E6%97%B6%E9%97%B4%E7%9A%84%E9%97%AE%E9%A2%98">1.3 关于季度时间的问题</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0">2. 统计描述</a></li>
+<li><a href="#3-%E7%94%9F%E6%88%90%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E8%A1%A8">3. 生成相关系数表</a></li>
+<li><a href="#4-%E6%95%B0%E6%8D%AE%E5%B9%B3%E7%A8%B3%E6%80%A7%E5%92%8C%E5%8D%8F%E6%95%B4%E6%A3%80%E9%AA%8C">4. 数据平稳性和协整检验</a></li>
+<li><a href="#5-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90">5. 回归分析</a></li>
+<li><a href="#6-%E6%97%B6%E9%97%B4%E6%95%88%E5%BA%94-%E5%BA%8F%E5%88%97%E7%9B%B8%E5%85%B3%E5%92%8C%E6%88%AA%E9%9D%A2%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A3%80%E9%AA%8C">6. 时间效应、序列相关和截面相关的检验</a>
+<ul>
+<li><a href="#61-%E6%97%B6%E9%97%B4%E6%95%88%E5%BA%94">6.1 时间效应</a></li>
+<li><a href="#62-%E5%BA%8F%E5%88%97%E7%9B%B8%E5%85%B3">6.2 序列相关</a></li>
+<li><a href="#63-%E6%88%AA%E9%9D%A2%E7%9B%B8%E5%85%B3%E6%A3%80%E9%AA%8C">6.3 截面相关检验</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://wengsway.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://wengsway.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+    
+  
+</body>
+
+</html>
